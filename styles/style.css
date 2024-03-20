@@ -1,0 +1,226 @@
+/* variables */
+:root {
+    /* loader */
+    --loader-ring-size: 300px;
+    --loader-ring-el-size: 250px;
+    --loader-ring-el-spacing: 20px;
+
+    /* section */
+    --section-spacing: 60px 0;
+
+    /* shell */
+    --shell-size: 800px;
+
+    /* global spacings */
+    --spacing-0: 0;
+    --spacing-5: 5px;
+    --spacing-10: 10px;
+    --margin-center: 0 auto;
+    --margin-bottom: 15px;
+
+    /* sizes */
+    --size-100: 100%;
+
+    /* position */
+    --position-0: 0;
+
+    /* colors */
+    --blue-2: #1b1b32;
+    --dark-blue: #0a0a23;
+
+    --white: #fff;
+    --orange: #e69c31;
+    --red: red;
+    --green: rgb(6, 164, 61);
+
+    /* durations */
+    --duration: .4s;
+}
+
+/* Reset */
+* {
+    margin: var(--spacing-0);
+    padding: var(--spacing-0);
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: var(--size-100);
+    margin: var(--spacing-0);
+    font-size: 16px;
+    background-color: var(--blue-2);
+    color:var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: var(--margin-bottom);
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
+    margin-bottom: var(--spacing-0);
+}
+
+input,
+textarea,
+select {
+  width: var(--size-100);
+  min-height: 2em;
+  padding: var(--spacing-10);
+}
+
+input, textarea {
+    background-color: var(--dark-blue);
+    border: 1px solid var(--dark-blue);
+    color: var(--white);
+}
+
+textarea {
+    min-height: 200px;
+    resize: none;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--margin-bottom);
+}
+
+button {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-color: currentColor;
+    min-width: 300px;
+    transition: color var(--duration), background-color var(--duration);
+    border: 1px solid var(--white);
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+
+/* Loader */
+body.loading .loader {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.loader {
+    position: absolute;
+    top: var(--position-0);
+    left: var(--position-0);
+    width: var(--size-100);
+    height: var(--size-100);
+    background-color: rgb(255,255,255, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration);
+}
+
+/* Loader ring */
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: var(--loader-ring-size);
+    height: var(--loader-ring-size);
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: var(--loader-ring-el-size);
+    height: var(--loader-ring-el-size);
+    margin: var(--loader-ring-el-spacing);
+    border: var(--loader-ring-el-spacing) solid var(--orange);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--orange) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+/* Shell */
+
+.shell {
+    max-width: var(--shell-size);
+    margin: var(--margin-center);
+}
+
+/* Section */
+
+.section {
+    padding: var(--section-spacing);
+}
+
+/* Form */
+
+.form {
+    min-width: 500px;
+    margin: var(--spacing-0) auto;
+}
+
+.form .form__title {
+    text-align: center;
+    margin-bottom: var(--margin-bottom);
+}
+
+.form .form__row {
+    margin-bottom: var(--margin-bottom);
+}
+
+.form .form__row:last-child {
+    margin-bottom: var(--spacing-0);
+}
+
+.form .form__error {
+    color: var(--red);
+}
+
+.form .form__success {
+    display: inline-block;
+    color: var(--white);
+    padding: var(--spacing-5);
+    background-color: var(--green);
+}
+
+/* animations */
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,5 @@
+
+SetEnv HTTP_PHP_MAILER_HOST "smtp.gmail.com"
+SetEnv HTTP_PHP_MAILER_PORT 587
+SetEnv HTTP_PHP_MAILER_USERNAME "contactformnr@gmail.com"
+SetEnv HTTP_PHP_MAILER_PASSWORD "uhny jwsa utwq zald"
